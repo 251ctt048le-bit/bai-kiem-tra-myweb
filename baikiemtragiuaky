@@ -1,0 +1,223 @@
+!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Store</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f4f4;
+        }
+
+        /* HEADER */
+        header{
+            background:#0d6efd;
+            color:white;
+            padding:20px;
+        }
+
+        nav{
+            display:flex; /* FLEXBOX */
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:20px;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+        /* BANNER */
+        .banner{
+            text-align:center;
+            padding:50px;
+            background:white;
+        }
+
+        .banner button{
+            padding:10px 20px;
+            margin-top:10px;
+            cursor:pointer;
+        }
+
+        /* PRODUCTS */
+        .products{
+            padding:30px;
+        }
+
+        .product-grid{
+            display:grid; /* CSS GRID */
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+        }
+
+        article{
+            background:white;
+            padding:15px;
+            border-radius:10px;
+            box-shadow:0 0 5px rgba(0,0,0,0.2);
+            text-align:center;
+        }
+
+        article img{
+            width:100%;
+            height:220px;
+            object-fit:cover;
+        }
+
+        article button{
+            margin-top:10px;
+            padding:8px 15px;
+            background:#0d6efd;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+
+        /* NEWS */
+        .news{
+            padding:30px;
+            background:white;
+        }
+
+        /* FOOTER */
+        footer{
+            background:#222;
+            color:white;
+            text-align:center;
+            padding:20px;
+            margin-top:20px;
+        }
+
+        .dark-mode{
+            background:#222;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <h2>PHONE STORE</h2>
+
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SECTION 1 -->
+    <section class="banner">
+        <h1>Cửa Hàng Điện Thoại Chính Hãng</h1>
+        <p>iPhone - Samsung - Xiaomi giá tốt</p>
+
+        <button onclick="showMessage()">
+            Nhận ưu đãi
+        </button>
+
+        <button onclick="changeTheme()">
+            Đổi giao diện
+        </button>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="products">
+        <h2>Sản phẩm nổi bật</h2>
+        <br>
+
+        <div class="product-grid">
+
+            <article>
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500" alt="">
+                <h3>iPhone 15</h3>
+                <p>Giá: 22.990.000 VNĐ</p>
+                <button onclick="showProduct('iPhone 15')">
+                    Xem chi tiết
+                </button>
+            </article>
+
+            <article>
+                <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=500" alt="">
+                <h3>Samsung S24</h3>
+                <p>Giá: 20.490.000 VNĐ</p>
+                <button onclick="showProduct('Samsung S24')">
+                    Xem chi tiết
+                </button>
+            </article>
+
+            <article>
+                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500" alt="">
+                <h3>Xiaomi 14</h3>
+                <p>Giá: 15.990.000 VNĐ</p>
+                <button onclick="showProduct('Xiaomi 14')">
+                    Xem chi tiết
+                </button>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="news">
+        <h2>Tin tức công nghệ</h2>
+        <br>
+
+        <article>
+            <h3>iPhone mới ra mắt</h3>
+            <p>Apple giới thiệu nhiều tính năng AI mới.</p>
+        </article>
+
+        <br>
+
+        <article>
+            <h3>Samsung Galaxy AI</h3>
+            <p>Công nghệ AI hỗ trợ chỉnh sửa ảnh thông minh.</p>
+        </article>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>Thông tin liên hệ</h3>
+        <p>Email: phonestore@gmail.com</p>
+        <p>SĐT: 0123 456 789</p>
+    </footer>
+
+    <script>
+        // Chức năng 1: Hiển thị thông báo
+        function showMessage(){
+            alert("Chào mừng bạn đến với Phone Store!");
+        }
+
+        // Chức năng 2: Hiển thị chi tiết sản phẩm
+        function showProduct(name){
+            alert("Bạn đang xem: " + name);
+        }
+
+        // Chức năng 3: Đổi màu giao diện
+        function changeTheme(){
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+
+</body>
+</html>
